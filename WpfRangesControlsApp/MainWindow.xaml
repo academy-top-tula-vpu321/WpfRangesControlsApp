@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfRangesControlsApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfRangesControlsApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <DatePicker x:Name="datePicker"
+                        SelectedDate="5/18/2024"
+                        SelectedDateFormat="Long"/>
+            <Calendar x:Name="calendar"
+                     DisplayDateStart="4/30/2023"
+                      DisplayDateEnd="6/1/2025"
+                      IsTodayHighlighted="True"
+                      SelectionMode="MultipleRange"
+                      DisplayMode="Year"/>
+            <Button Content="View Dates" Click="Button_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Slider Margin="5"
+                    Delay="5000"
+                    Interval="2000"
+                    Minimum="0"
+                    Maximum="100"
+                    TickPlacement="BottomRight"
+                    TickFrequency="10"
+                    Value="50"
+                    IsSelectionRangeEnabled="True"
+                    SelectionStart="0"
+                    ValueChanged="Slider_ValueChanged"/>
+            <ProgressBar x:Name="progress" 
+                         Height="50"
+                         Minimum="0"
+                         Maximum="100"/>
+            <Button x:Name="btnProgress" Content="Progress Start" Click="btnProgress_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
